@@ -23,7 +23,7 @@ fun main() = runBlocking {
     val listening: MutableMap<Long, VoiceHandler> = Collections.synchronizedMap(mutableMapOf())
     val papagoTTS = PapagoAnonTTS()
     
-    val jda = light("MTA0NDk1ODY2NzIzNTEzOTYxNQ.GXNV2T.HhnB7TIPLcXGqBU1b4sLSjkcfF9QqXLjPW0CL8", enableCoroutines = true) {
+    val jda = light(System.getenv("token"), enableCoroutines = true) {
         enableIntents(GatewayIntent.entries)
         
         enableCache(CacheFlag.getPrivileged())
